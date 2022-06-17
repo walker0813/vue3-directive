@@ -1,4 +1,4 @@
-# drag-demo
+# lazy-demo
 
 ## Project setup
 ```
