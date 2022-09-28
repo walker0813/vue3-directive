@@ -1,19 +1,19 @@
 import { createApp, onMounted } from 'vue'
 import App from './App.vue'
-
+import { checkArray } from './check';
 const app = createApp(App)
-app.directive('lazy', {
+
+app.directive("permission", {
   mounted (el, binding) {
-    var observer = new IntersectionObserver(e => {
-      console.log(e)
-      if (e[0].isIntersecting) {
-        el.src = binding.value
-        console.log(el.src)
-        observer.unobserve(el)
+    let permission = binding.value // 获取到 v-permission的值
+    console.log(permission);
+    if (permission) {
+      let hasPermission = checkArray(permission)
+      if (!hasPermission) { // 没有权限 移除Dom元素
+        el.parentNode && el.parentNode.removeChild(el)
       }
-    })
-    observer.observe(el)
+    }
   }
-})
+});
 
 app.mount('#app')

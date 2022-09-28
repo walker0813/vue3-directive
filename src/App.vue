@@ -1,13 +1,17 @@
 <template>
-  <div class="box"></div>
-  <img v-lazy="img_url1" class="img" />
-  <div class="box"></div>
-  <img v-lazy="img_url2" class="img" />
+  <div>
+    <ul>
+      <li v-permission="'1'">1</li>
+      <li v-permission="'2'">2</li>
+      <li v-permission="'3'">3</li>
+      <li v-permission="'4'">4</li>
+      <li v-permission="'5'">5</li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
-const img_url1 = "https://www.runoob.com/wp-content/uploads/2015/02/011500266295799.jpg"
-const img_url2 = "https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/newfanyi-da0cea8f7e.png"
+
 </script>
 
 <style lang="scss">
